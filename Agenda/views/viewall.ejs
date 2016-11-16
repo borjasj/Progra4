@@ -1,0 +1,72 @@
+<html>
+<title>Lista de contactos</title>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 40%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color:  #d0e1f3; 
+}
+
+body {
+    
+    background-color: #cae4ff;    
+
+}
+
+</style>
+</head>
+<body>
+
+<h1>Lista de Contactos</h1><br>
+
+
+
+<a href="home">
+  <img src="home.png" alt="Inicio" style="width:70px;height:70px; ">
+</a>
+<a href="add">
+  <img src="add.png" alt="Adicionar" style="width:70px;height:70px; ">
+</a>
+<!--
+<a href="update">
+  <img src="editar.png" alt="Actualizar" style="width:70px;height:70px; ">
+</a>
+<a href="delete">
+  <img src="eliminar.png" alt="Eliminar" style="width:70px;height:70px; ">
+</a>
+-->
+<br><br>
+<table>
+  <tr>   
+    <th>Contacto</th>
+    <th>Num. Telefono</th>
+    <th>Eliminar</th>
+    <th>Editar</th>
+  </tr>
+  <% for(var i=0;i<contactos.length;i++) { %>
+     <tr>
+      <td><%= contactos[i][1] %></td>
+      <td><a href="buscar?telefono=<%=contactos[i][0]%>"><%= contactos[i][0] %></a></td>
+      <td><a href="borrar?telefono=<%=contactos[i][0]%>"><center><img src="delete.png" alt="Eliminar" style="width:50px;height:50px;"><center></a></td>
+      <td><a href="buscar?telefono=<%=contactos[i][0]%>"><center><img src="edit.png" alt="Eliminar" style="width:50px;height:50px;"><center></a></td>
+     </tr>
+  <% } %>
+
+</table>
+</body>
+</html>
+
+
+
+
